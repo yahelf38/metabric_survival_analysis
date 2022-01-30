@@ -62,7 +62,7 @@ data_Expression_level_cut_off<-function(Expresion_table1,Expresion_table2,clinic
     Expresion_table1$Main_Expression_Level <- ifelse(Expresion_table1[,"value"]>quantile(Expresion_table1[,"value"],probs = Expression_level),"HIGH","LOW")
   }
   if (input_main_expressoin == "LOW") {
-    Expresion_table1$Main_Expression_Level <- ifelse(Expresion_table1[",value"]>quantile(Expresion_table1[,"value"],probs = 1 - Expression_level),"HIGH","LOW")
+    Expresion_table1$Main_Expression_Level <- ifelse(Expresion_table1[,"value"]>quantile(Expresion_table1[,"value"],probs = 1 - Expression_level),"HIGH","LOW")
   }
   if (input_secondery_Expression == "HIGH") {
     Expresion_table2$Secondary_Expression_Level <- ifelse(Expresion_table2[,"value"]>quantile(Expresion_table2[,"value"],probs =  Expression_level),"HIGH","LOW")
